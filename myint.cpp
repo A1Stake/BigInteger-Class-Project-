@@ -56,7 +56,7 @@ MyInt::MyInt(int n){			//conversion constructor for int
 
 MyInt::MyInt(const char* c){
 	bool valid = true, hitNumber = false;		//used to check input string for conditions
-	int startingIndex = 0;				//removes unimportant zeroes from beginning of number
+	unsigned long long startingIndex = 0;		//removes unimportant zeroes from beginning of number
 	for(int i = 0; i < strlen(c); i++){		//loop checks if all the characters in the
 		if(isdigit(c[i]) && c[i] != '0'){	//array are digits and removes any zeros at
 			hitNumber = true;		//the start of the cstring that are not needed
@@ -139,8 +139,8 @@ MyInt::~MyInt(){				//deletes dynamically allocated memory
 }
 
 MyInt operator+(const MyInt& x, const MyInt& y){
-	unsigned int biggerSize = (x.size > y.size) ? x.size : y.size;
-	unsigned int smallerSize = (x.size < y.size) ? x.size : y.size;
+	unsigned long long biggerSize = (x.size > y.size) ? x.size : y.size;
+	unsigned long long smallerSize = (x.size < y.size) ? x.size : y.size;
 
 	bool usingX = (x.size > y.size) ? true : false;	//finds the number with the most digits
 	
@@ -178,8 +178,8 @@ MyInt operator+(const MyInt& x, const MyInt& y){
 }
 
 MyInt operator-(const MyInt& x, const MyInt& y){
-	unsigned int biggerSize = (x.size > y.size) ? x.size : y.size;
-	unsigned int smallerSize = (x.size < y.size) ? x.size : y.size;
+	unsigned long long biggerSize = (x.size > y.size) ? x.size : y.size;
+	unsigned long long smallerSize = (x.size < y.size) ? x.size : y.size;
 
 	bool usingX = (x.size > y.size) ? true : false;
 	
@@ -225,8 +225,8 @@ MyInt operator-(const MyInt& x, const MyInt& y){
 }
 
 MyInt operator*(const MyInt& x, const MyInt& y){
-	unsigned int biggerSize = (x.size > y.size) ? x.size : y.size;
-	unsigned int smallerSize = (x.size < y.size) ? x.size : y.size;
+	unsigned long long biggerSize = (x.size > y.size) ? x.size : y.size;
+	unsigned long long smallerSize = (x.size < y.size) ? x.size : y.size;
 
 	bool usingX = (x.size > y.size) ? true : false;
 	
@@ -260,8 +260,8 @@ MyInt operator*(const MyInt& x, const MyInt& y){
 }
 
 bool operator<(const MyInt& x, const MyInt& y){
-	int xSize = x.size;
-	int ySize = y.size;
+	unsigned long long xSize = x.size;
+	unsigned long long ySize = y.size;
 
 	//if x has less digits, it cannnot be greater than y and vice versa
 	if(xSize < ySize){
@@ -307,7 +307,7 @@ ostream& operator<<(ostream& s, const MyInt& x){
 }
 
 istream& operator>>(istream& s, MyInt& x){
-	int counter = 0;
+	unsigned long long counter = 0;
 	char* theArray = new char[1];
 	while(isspace(s.peek())){			//any white space before the number is ignored
 		s.get();
