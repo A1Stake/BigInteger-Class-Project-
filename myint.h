@@ -1,7 +1,5 @@
 /*
  * Matthew Wix
- * COP3330 Section 4
- * Project #5
  * Summary: The purpose of this file is to outline the functions necessary for storing a number bigger
  * than the max storage size of an int and performing some of the basic arithmetic operations.
  */
@@ -39,5 +37,5 @@ public:
 
 private:
    char *digits;				//stores digits of numbers as charcters
-   unsigned int size;				//stores number of digits in the number
+   unsigned long long size;			//stores number of digits in the number
 };
