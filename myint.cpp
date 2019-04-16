@@ -1,7 +1,5 @@
 /*
  * Matthew Wix
- * COP3330 Section 4
- * Project #5
  * Summary: The purpose of this file is to implement the methods for creating a class
  * that can store a number much larger than what can be stored by the integer data type.
  * The methods implemented can store the large number, perform addition, multiplication,
